@@ -1,0 +1,2 @@
+set hive.execution.engine = spark
+select e.eid,e.ename,c.aid,a.aname from flights.employee e join flights.certificate c on e.eid=c.eid join flights.aircraft a on c.aid=a.aid;

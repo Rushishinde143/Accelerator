@@ -1,0 +1,8 @@
+set hive.execution.engine = tez
+create database flights;
+CREATE TABLE 'flights'.'aircraft'(aid int, aname string, cruisingrange int) PARTITIONED BY(aname string) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',';
+LOAD DATA INPATH '/cdp/data/dataset/aircraft.csv' INTO TABLE 'flights'.'aircraft';
+CREATE TABLE 'flights'.'certified'(eid bigint, aid int) PARTITIONED BY(eid bigint) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',';
+LOAD DATA INPATH '/cdp/data/dataset/certified.csv' INTO TABLE 'flights'.'aircraft';
+CREATE TABLE 'flights'.'employee'(eid bigint, ename string, salary bigint) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',';
+LOAD DATA INPATH '/cdp/data/dataset/employee.csv' INTO TABLE 'flights'.'employee';

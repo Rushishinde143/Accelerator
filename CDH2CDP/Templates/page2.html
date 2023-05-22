@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block content %} 
+
+<div class="container" style="position:initial;">
+    <div class="row" style="padding-top: 60px;">
+      <div class="col-sm-6">
+        <script>
+ 
+            $('#Files').filestyle({
+            
+            buttonText : 'Multiple',
+            
+            buttonName : 'btn-primary'
+            
+            });
+
+             
+            
+        </script>
+        
+        <form  method="post" enctype="multipart/form-data"  action="/Upload/">
+            {% csrf_token %} 
+            
+            {{ form.as_p }}  
+             <!-- <input type="file" class="form-control" id="Files"  name='File[]' multiple="multiple"/>
+            <br> -->
+            {%if status%}
+               <i > Files Uploaded Successfully</i>
+            {%else%}
+              <input class="btn btn-primary" type="submit" value="Upload" id="file_1" style="width:200px"  /> 
+            {%endif%}
+        </form>
+        
+            
+      </div>
+      <div class="col-sm-6">
+
+     
+        <form  method="post" enctype="multipart/form-data"  action="/submit/">
+
+          
+          {% csrf_token %} 
+
+            <label for="files">Select target folder</label>
+            <br>
+            <input type="text" id="flup" name="path" webkitdirectory mozdirectory msdirectory odirectory directory multiple />
+            <!-- <button type="button" class="btn btn-primary btn-lg" style="width:400px;height: 38px;text-align: center;">Output Folder</button> -->
+            <br>
+            <br>
+            <!-- <button type="button" class="btn btn-primary " style="width:200px;height: 38px;text-align: center;">Browse</button> -->
+            <center>
+              <button type="submit" class="btn btn-primary btn-lg" style="width:400px" value="submit">Submit</button>
+              </center>
+              </form>
+      
+      </div>
+    </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+{% endblock %}

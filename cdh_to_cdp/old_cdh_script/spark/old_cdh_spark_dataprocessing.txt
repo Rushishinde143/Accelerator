@@ -1,0 +1,16 @@
+import com.hortonworks.spark.sql.hive.llap.{HiveWarehouseBuilder, HiveWarehouseSession}
+import org.apache.spark.sql.{SaveMode, SparkSession}
+object HWCApp def main(args: Array[String]): Unit = {
+val spark = SparkSession.builder.appName("HWCApp").enableHiveSupport.getOrCreate
+val hwc = HiveWarehouseBuilder.session(spark).build
+// create sample data
+val tvSeries = createSampleDataDf(spark)
+val tableName = "tv_series"
+hwc.dropTable(tableName, true, true)
+println(s"=======Writing to hive table - $tableName via HWC======="
+// write to hive table via HWC
+tvSeries.write.format(HiveWarehouseSession.HIVE_WAREHOUSE_CONNECTOR).option("table", tableName).mode(SaveMode.Append).save
+println(s"=======Reading hive table $tableName via HWC=======")
+// Read via HWC hwc.sql(s"select * from $tableName").show(truncate = false)
+hwc.close() spark.stop
+}
