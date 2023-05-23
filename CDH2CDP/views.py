@@ -1,6 +1,8 @@
+import time
+
 from django.core.files.storage import FileSystemStorage
 from django.shortcuts import render
-from .forms import UploadForm, FileFieldForm
+from .forms import UploadForm , FileFieldForm
 
 from django.views.generic.edit import FormView
 from .forms import FileFieldForm
@@ -39,19 +41,23 @@ def upload_view(request):
         
         files = request.FILES.getlist('file')
 
+        batch_size = 3
+
         print(files)
-
-        for file in files:
-            s = FileSystemStorage(location = "C:/Users/SCHILLAL/PycharmProjects/Accelerator/Media/user_input/")
-            filename = s.save(file.name, file)
-            uploaded_file_path = s.path(filename)
-            print('absolute file path', uploaded_file_path)
-            # print(type(uploaded_file_path))
+        for i in range(0, len(files),batch_size):
+            for j in range(batch_size):
+                if i+j < len(files):
+                    file = files[i+j]
+                    s = FileSystemStorage(location = "C:/Users/SCHILLAL/PycharmProjects/Accelerator/Media/user_input/")
+                    filename = s.save(file.name, file)
+                # uploaded_file_path = s.path(filename)
+                # print('absolute file path', uploaded_file_path)
+                # print(type(uploaded_file_path))
+            time.sleep(1)
+            main.main()
         #list of files.
-          
+
         return render(request, "page2.html", {'status': True})
-
-
 def folder_selection(request):
     if request.method == 'POST':
         selected_folder = request.POST.get('folder')
@@ -63,7 +69,7 @@ def submit_view(request):
     if request.method == 'POST': 
         data = request.POST['path']
 
-        main.main()
+        # main.main()
         
         ##write your main logic
     return render(request,'home.html')

@@ -1,6 +1,7 @@
+{% load static %}
 <html lang="en">
 <head>
-    
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -8,9 +9,9 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 <title>
-    
-    {% block title %} 
-        CDH to CDP 
+
+    {% block title %}
+        CDH to CDP
     {% endblock %}
 
 </title>
@@ -19,8 +20,14 @@
 </div>
 <br>
 <center>
-<h1 style="color:lightseagreen; text-shadow: 0 0 3px purple, 0 0 5px #0000FF; text-decoration-style: solid;">Capgemini  </h1>
-<h4 style="color:lightseagreen; text-shadow:  0 0 10px #0000FF;">Accelerator for HDP/CDH to CDP Platform Upgrade</h4>
+
+
+    <img src="{% static 'Capgemini_Logo_2COL_RGB.png' %}" width="360" height="180">
+
+<!--    <h4 style="color:DodgerBlue; text-shadow:  0 0 10px #0000FF;">Accelerator for HDP/CDH to CDP Platform Upgrade</h4>-->
+    <h3 style="color:DodgerBlue; "> <b>Accelerator for HDP/CDH to CDP Platform Upgrade </b></h3>
+
+
 </center>
 
 </head>

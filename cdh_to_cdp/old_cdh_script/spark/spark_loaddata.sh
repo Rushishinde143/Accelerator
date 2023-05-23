@@ -1,1 +1,0 @@
-spark-submit --jars /opt/cloudera/parcels/CDH/lib/hive_warehouse_connector/hive-warehouse-connector-assembly-1.0.0.7.2*.jar \--class com.cloudera.HWCApp \...More spark/HWC confs /path-to-jar/hwc-app.jar

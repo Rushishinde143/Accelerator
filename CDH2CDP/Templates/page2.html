@@ -1,10 +1,10 @@
 {% extends "base.html" %}
-{% block content %} 
+{% block content %}
 
 <div class="container" style="position:initial;">
     <div class="row" style="padding-top: 60px;">
-      <div class="col-sm-6">
-        <script>
+        <div class="col-sm-6">
+            <script>
  
             $('#Files').filestyle({
             
@@ -13,56 +13,67 @@
             buttonName : 'btn-primary'
             
             });
-
-             
             
-        </script>
-        
-        <form  method="post" enctype="multipart/form-data"  action="/Upload/">
-            {% csrf_token %} 
-            
-            {{ form.as_p }}  
-             <!-- <input type="file" class="form-control" id="Files"  name='File[]' multiple="multiple"/>
-            <br> -->
-            {%if status%}
-               <i > Files Uploaded Successfully</i>
-            {%else%}
-              <input class="btn btn-primary" type="submit" value="Upload" id="file_1" style="width:200px"  /> 
-            {%endif%}
-        </form>
-        
-            
-      </div>
-      <div class="col-sm-6">
 
-     
-        <form  method="post" enctype="multipart/form-data"  action="/submit/">
+            </script>
 
-          
-          {% csrf_token %} 
+            <form action="/Upload/" enctype="multipart/form-data" method="post">
+                {% csrf_token %}
 
-            <label for="files">Select target folder</label>
-            <br>
-            <input type="text" id="flup" name="path" webkitdirectory mozdirectory msdirectory odirectory directory multiple />
-            <!-- <button type="button" class="btn btn-primary btn-lg" style="width:400px;height: 38px;text-align: center;">Output Folder</button> -->
-            <br>
-            <br>
-            <!-- <button type="button" class="btn btn-primary " style="width:200px;height: 38px;text-align: center;">Browse</button> -->
-            <center>
-              <button type="submit" class="btn btn-primary btn-lg" style="width:400px" value="submit">Submit</button>
-              </center>
-              </form>
-      
-      </div>
+                {{ form.as_p }}
+                <!-- <input type="file" class="form-control" id="Files"  name='File[]' multiple="multiple"/>
+               <br> -->
+                {%if status%}
+                <i> Files Uploaded Successfully</i>
+                {%else%}
+                <input class="btn btn-primary" id="file_1" style="width:200px" type="submit" value="Upload"/>
+                {%endif%}
+            </form>
+
+            <style>
+              .centered-div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+<!--                height: 50vh; /* Adjust the height as needed */-->
+              }
+
+            </style>
+
+            <div class="centered-div">
+                <!-- Content of the centered div -->
+            </div>
+            <!--      <div class="col-sm-6">-->
+            <form action="/submit/" enctype="multipart/form-data" method="post">
+                {% csrf_token %}
+
+                <label for="files">Select target folder</label>
+                <br>
+                <!--            <button type="button">Select path to Save files</button>-->
+                <input directory id="flup" mozdirectory msdirectory multiple name="path" odirectory type="text"
+                       webkitdirectory/>
+                <br>
+                <br>
+                <!DOCTYPE html>
+                <!--            <center>-->
+                <button class="btn btn-primary btn-lg" style="width:400px" type="submit" value="submit">Submit</button>
+                <a href="file:///C:/Users/SCHILLAL/PycharmProjects/Accelerator/Media/destination_folder/index.html"
+                   target="_blank">Target folder link</a>
+                <!--                <a href="file:///C:/path/to/your/folder/">Link Text</a>-->
+
+                <!--              </center>-->
+            </form>
+
+            <!--      </div>-->
+        </div>
     </div>
+
+
 </div>
 
 <br>
 <br>
 <br>
 <br>
-
-
-
 
 {% endblock %}
