@@ -16,12 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from CDH2CDP import views
+from CDH2CDP.views import AboutView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home_view),
     path('page2/', views.page2_view),
-    path('Upload/', views.upload_view),
-    path('submit/', views.submit_view),
+    path('Upload/', AboutView.upload_view),
+    path('submit/', AboutView.submit_view),
     path('select_folder/', views.folder_selection)
 ]

@@ -2,8 +2,8 @@
 {% block content %}
 
 <div class="container" style="position:initial;">
-    <div class="row" style="padding-top: 60px;">
-        <div class="col-sm-6">
+    <div class="row" style="padding-top: 20px;">
+        <div class="col-lg-10">
             <script>
  
             $('#Files').filestyle({
@@ -33,17 +33,16 @@
             <style>
               .centered-div {
                 display: flex;
-                justify-content: center;
+                justify-content: flex-end;
                 align-items: center;
-<!--                height: 50vh; /* Adjust the height as needed */-->
+                margin-left: auto;
+
               }
 
             </style>
 
             <div class="centered-div">
-                <!-- Content of the centered div -->
-            </div>
-            <!--      <div class="col-sm-6">-->
+
             <form action="/submit/" enctype="multipart/form-data" method="post">
                 {% csrf_token %}
 
@@ -54,21 +53,15 @@
                        webkitdirectory/>
                 <br>
                 <br>
-                <!DOCTYPE html>
-                <!--            <center>-->
-                <button class="btn btn-primary btn-lg" style="width:400px" type="submit" value="submit">Submit</button>
+                               <button class="btn btn-primary btn-lg" style="width:400px" type="submit" value="submit">Submit</button>
                 <a href="file:///C:/Users/SCHILLAL/PycharmProjects/Accelerator/Media/destination_folder/index.html"
                    target="_blank">Target folder link</a>
                 <!--                <a href="file:///C:/path/to/your/folder/">Link Text</a>-->
 
-                <!--              </center>-->
             </form>
-
-            <!--      </div>-->
+            </div>
         </div>
     </div>
-
-
 </div>
 
 <br>
