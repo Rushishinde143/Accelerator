@@ -1,0 +1,11 @@
+index	first	last	age	date	city	state
+1	Timothy	Moss	54	2101-10-02	Rungijul	GA
+2	Henrietta	Wood	21	2040-11-15	Liorow	AZ
+3	Steve	Rice	48	2030-09-26	Fakguwof	IA
+4	Isaiah	Marsh	32	2108-05-01	Ebacma	NH
+5	Violet	Mullins	27	2091-03-21	Ovvesruv	VA
+6	Edgar	Williams	37	2046-06-22	Cafacuol	IA
+7	Delia	Richards	20	2095-09-18	Ojowebof	OK
+8	Millie	Norris	36	2110-09-29	Waahla	AL
+9	Nancy	Sherman	51	2069-11-25	Duderev	IL
+10	Steven	Bishop	46	2038-05-11	Usmogmot	IN

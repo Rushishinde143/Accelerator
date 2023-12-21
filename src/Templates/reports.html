@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+</style>
+
+<body>
+
+<div class="containers" style="position: initial;">
+    <form method="post" enctype="multipart/form-data" action="/submit_reports/">
+            {% csrf_token %}
+        <h3 style="color: darkBlue; font-weight: bold;text-align:center;">Reports</h3><br>
+        <div style="margin: 0;position: absolute;top: 40%;left: 50%;-ms-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
+            <label for="fileType" style="text-align:center;">Select File Type:</label>
+            <select id="fileType" name="fileType" style="position: relative; left: 0%;align:center;">
+                <option value="pdf">PDF</option>
+                <option value="csv">CSV</option>
+            </select><br>
+        </div><br><br><br>
+        <div class="center">
+            <input type = "submit" value = "Download" id="submit-buttons" class="btn btn-primary btn-lg" style="position: relative; left: 0%;align:center;"   />
+        </div>
+    </form>
+</div>
+</body>
+{% endblock %}

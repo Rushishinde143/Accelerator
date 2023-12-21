@@ -1,0 +1,11 @@
+emp_id	emp_name	age	email	dateofjoining	gender	salary	city	state
+1	Helen Poole	35	dossiv@ribviz.sg	2057-03-29	Female	$8161.67	Juanaon	AL
+2	Leo Adams	20	cukilu@netzub.dz	2108-04-15	Male	$5953.79	Morureca	MI
+3	Fanny Kim	53	pu@ner.nr	2110-08-19	Female	$8888.71	Ceteco	ME
+4	Rosie Watts	33	opiku@purtob.al	2059-10-09	Male	$1092.43	Tofapieto	OK
+5	Jacob Brooks	52	beczuplav@na.bi	2079-03-03	Male	$7645.59	Hevwaduz	AL
+6	Minerva Evans	38	sajepaaba@pehefo.ki	2084-05-01	Male	$6560.84	Omarahune	WV
+7	Scott Hamilton	19	mecrofzu@zedgep.tz	2037-02-03	Male	$883.31	Datike	OR
+8	Gerald Smith	62	jokjir@sioloku.al	2063-12-25	Female	$2701.93	Ozinoot	CT
+9	Helena Franklin	48	monavaemu@daohez.am	2098-11-30	Male	$6434.62	Tivaobi	CO
+10	Dollie Long	58	vok@gusniwe.tn	2061-03-17	Male	$5146.73	Ugedigra	ND

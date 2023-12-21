@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container" style="position: initial;">
+    <h3 style="color: darkBlue; font-weight: bold;"> Hive Refactor </h3>
+    <!-- <div class="row" style="padding-top: 60px;">
+        <div class="col-sm-6">
+            <script>
+                $('#Files').filestyle({
+                    buttonText: 'Multiple',
+                    buttonName: 'btn-primary'
+                });
+            </script>
+        </div>
+    </div> -->
+    <div>
+        <form method="post" enctype="multipart/form-data" action="/Upload-hive/">
+            {% csrf_token %}
+            <!-- Dropdown for selecting file type -->
+            
+
+            {{ form.as_p }}
+
+            {% if status %}
+            <i>Files Uploaded Successfully</i>
+            {% else %}
+            <input class="btn btn-primary" type="submit" value="Upload" id="file_1" style="width: 200px" />
+            {% endif %}
+        </form>
+    </div>
+    <br>
+    <br>
+
+    <!-- <form action="upload.php" method="post" enctype="multipart/form-data">
+        <label for="zipFile">Select a ZIP file:</label>
+        <input type="file" id="zipFile" name="zipFile" accept=".zip">
+        <br>
+        <input type="submit" value="Upload">
+    </form>-->
+    <div class="col-sm-6">
+       
+        
+
+        <form method="post" action="/submit-hive/">
+            {% csrf_token %}
+            <input type = "button" value = "Submit" id = 'submit-button' class="btn btn-primary btn-lg" style="position: relative; left: 0%;"   />
+            <input type = "submit" value = "Cancel"  class="btn btn-primary btn-lg" style="position: relative; left: 20%;" onclick="location.href = '/cancel'" />
+        
+            <div id="progress-container" style="display: none;">
+              <progress id="progress-bar" max="100"></progress>
+              <p id="progress-status">Progress: 0%</p>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+            <script>
+                document.getElementById('submit-button').addEventListener('click', function() {
+                    document.getElementById('progress-container').style.display = 'block';
+                    
+                    simulateProgress();
+                });
+               
+                
+                function simulateProgress() {
+        
+                    axios.get('/submit-hive/',
+                    {
+                    params: {
+                        param: 'parameter1'
+                    }
+                    })
+                        .then(function(response) {
+                            const progress = response.data.progress;
+                            updateProgressBar(progress);
+        
+                            if (progress < 100) {
+                                setTimeout(simulateProgress, 1000);
+                            } else {
+                                document.getElementById('progress-status').innerText = 'Progress: Completed';
+                            }
+                        })
+                        .catch(function(error) {
+                            console.error("Error:", error);
+                        });
+                }
+        
+                function updateProgressBar(progress) {
+                    const progressBar = document.getElementById('progress-bar');
+                    progressBar.value = progress;
+                    document.getElementById('progress-status').innerText = `Progress: ${progress}%`;
+                }
+            </script>
+        
+        </form>
+    
+    </div>
+</div>
+
+<style>
+    /* Styling for the progress bar and fill */
+    #progress-bar {
+        width: 30%;
+        background-color: #ddd;
+        height: 20px;
+    }
+
+    #progress-bar-fill {
+        height: 100%;
+        background-color: #04AA6D;
+        transition: width 30s;
+        text-align: center;
+        line-height: 20px;
+        color: white;
+        width: 0;
+    }
+</style>
+
+<br>
+<br>
+<br>
+<br>
+{% endblock %}
+
+

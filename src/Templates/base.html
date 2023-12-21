@@ -1,0 +1,91 @@
+{% load static %}
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<title>
+
+    {% block title %}
+        CDH to CDP
+    {% endblock %}
+
+</title>
+<!-- <div class="btn-group" style="float:right; padding: 20px;">
+    <button type="button" class="btn btn-primary btn-sm"  onclick="location.href = '/contact_us/'">Help</button>
+
+</div>
+<div class="btn-group" style="float:left; padding: 20px;">
+    <button type="button" class="btn btn-primary btn-sm"  onclick="location.href = '/'">Home</button>
+
+
+</div> -->
+<br>
+<style>
+    .topbar{
+display: flex;
+justify-content: space-between;
+align-items: center;
+height: 80px;
+/* background-color:ghostwhite; */
+}
+.topbar .img img{
+height: 70px;
+width:200px;
+margin-left:50px;
+}
+.topbar .right-elements{
+position: relative;
+padding: 10px 20px;
+margin-right: 50px;
+}
+.topbar .right-elements button{
+background-color: #0070AD;
+color: white;
+padding: 6px 15px;
+transition: all 0.3s ease;
+margin-left: 20px;
+}
+.topbar .right-elements button:hover{
+cursor: pointer;
+background-color: #12ABDB;
+}
+
+</style>
+<center>
+  
+
+    <!-- <img src="{% static 'Capgemini_Logo_2COL_RGB.png' %}" width="480" height="180"> -->
+    <div class="topbar">
+        <div class="img">
+          <a href="#"><img src="{% static 'Capgemini_Logo_2COL_RGB.png' %}"  alt=""></a>
+        </div>
+        <div class="right-elements">
+          <!--<button type="submit" href="#">Home</button>-->
+            <button type="button" class="btn btn-primary btn-sm"  onclick="location.href = '/'">Home</button>
+
+<!--            <button type="button" class="btn btn-primary btn-sm"  onclick="location.href = '/contact_us/'">Help</button>-->
+          <!--<button type="submit" href="#">Help</button>-->
+
+        </div>
+    </div>
+
+       <h2 style="color: darkBlue; font-weight: bold; margin-top: 0px;">CDH Rapid Sunset</h2>
+
+
+<!--    <h4 style="color:DodgerBlue; text-shadow:  0 0 10px #0000FF;">Accelerator for HDP/CDH to CDP Platform Upgrade</h4>-->
+    <h5 style="color:darkBlue; "> (Accelerator for HDP/CDH to CDP Platform Upgrade) </h5>
+
+</center>
+
+</head>
+<body>
+
+    {% block content %} {% endblock %}
+    
+</body>
+</html>

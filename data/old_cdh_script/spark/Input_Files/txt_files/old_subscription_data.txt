@@ -1,0 +1,11 @@
+index	fullname	subscription_date	city	email	phone
+1	Laura Burton	2089-08-16	Fijowu	rievi@buimagel.sz	(828) 886-1643
+2	Pearl Simmons	2072-12-22	Benokih	enjuhi@morzoop.id	(742) 771-7666
+3	Katherine West	2082-09-23	Peuvugoc	taittev@tib.es	(679) 602-2491
+4	Roxie Delgado	2070-06-08	Bapabizu	haga@ilrah.pa	(860) 965-3186
+5	Johnny Moss	2096-10-08	Donjojan	vorvi@haksal.ml	(568) 293-7473
+6	Elnora Perry	2098-05-08	Jopeko	rapmu@topidi.fr	(241) 880-8265
+7	Jesus Buchanan	2110-02-13	Fedjuwo	miso@togco.td	(588) 975-3682
+8	Emilie Robinson	2064-09-21	Todorob	me@irdegap.tc	(734) 771-9537
+9	Earl Thompson	2086-11-24	Vuhidim	bihdekji@ifo.kn	(688) 883-3210
+10	Ina Dean	2092-03-05	Catempu	vuwuna@wasiw.gt	(479) 727-6989

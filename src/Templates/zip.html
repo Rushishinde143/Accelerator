@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="containers" style="position: initial;">
+<form method="post" enctype="multipart/form-data" action="/upload-zip/">
+    {% csrf_token %}
+<h3 style="color: darkBlue; font-weight: bold;">Import your existing bigdata project </h3>
+<!-- <div class="row" style="padding-top: 60px;">
+<div class="col-sm-6">
+<script>
+                $('#Files').filestyle({
+                    buttonText: 'Multiple',
+                    buttonName: 'btn-primary'
+                });
+</script>
+</div>
+</div> -->
+
+
+
+<!--<lable>{{ form.errors }} {{ form.non_field_errors }}</lable>-->
+       <!-- Dropdown list for ZIP file selection -->
+<!-- File input field for ZIP file upload -->
+<label for="zip_upload">Upload a ZIP File:</label>
+<input type="file" required name="zip_upload" accept=".zip"><br>
+
+</select>
+
+
+
+<!--    <button type="submit">Upload</button>-->
+    <input class="btn btn-primary" type="submit" value="Upload"><br>
+    <label style="color:green;size:100px;">{{message}}</label><br><br>
+    <label style="color:green;size:100px;">{{submit_message}}</label>
+    <ul class="messages">
+<!--      {% for message in messages %}-->
+<!--      <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>-->
+<!--      {% endfor %}-->
+  </ul>
+</form>
+
+
+
+    </div>
+<br>
+<br>
+<div class="col-sm-6">
+
+
+
+
+
+        <form method="post" enctype="multipart/form-data" action="/submit-zip/">
+            {% csrf_token %}
+
+<input type = "submit" value = "Submit" id="submit-buttons" class="btn btn-primary btn-lg" style="position: relative; left: 0%;"   />
+<input type = "submit" value = "Cancel"  class="btn btn-primary btn-lg" style="position: relative; left: 20%;" onclick="location.href = '/cancel'" />
+
+
+
+            <div hidden id="progress-containers" style="display: none;">
+<progress hidden id="progress-bars" max="100"></progress>
+<p hidden id="progress-statuss">Progress: 0%</p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+                document.getElementById('submit-buttons').addEventListener('click', function() {
+                    document.getElementById('progress-containers').style.display = 'block';
+                    console.log("onclick submit")
+
+
+                    simulateProgress();
+                });
+
+
+
+
+
+                function simulateProgress() {
+                    console.log("in fun...")
+
+
+                    axios.get('submit-zip/',
+                    {
+                    params: {
+                        param: 'parameter1'
+                    }
+                    })
+                        .then(function(response) {
+                            const progress = response.data.progress;
+                            updateProgressBars(progress);
+
+
+
+                            if (progress < 100) {
+                                setTimeout(simulateProgress, 1000);
+                            } else {
+                                document.getElementById('progress-statuss').innerText = 'Progress: Completed';
+                            }
+                        })
+                        .catch(function(error) {
+                            console.error("Error:", error);
+                        });
+                }
+
+
+
+                function updateProgressBars(progress) {
+                    const progressBars = document.getElementById('progress-bars');
+                    progressBars.value = progress;
+                    document.getElementById('progress-statuss').innerText = `Progress: ${progress}%`;
+                }
+</script>
+
+
+
+        </form>
+
+
+
+    </div>
+</div>
+
+
+
+<style>
+    /* Styling for the progress bar and fill */
+    #progress-bars {
+        width: 30%;
+        background-color: #ddd;
+        height: 20px;
+    }
+
+
+
+    #progress-bars-fill {
+        height: 100%;
+        background-color: #04AA6D;
+        transition: width 30s;
+        text-align: center;
+        line-height: 20px;
+        color: white;
+        width: 0;
+    }
+</style>
+
+
+
+<br>
+<br>
+<br>
+<br>
+{% endblock %}

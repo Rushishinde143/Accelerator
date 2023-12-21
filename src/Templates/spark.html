@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container" style="position: initial;">
+    <br>
+    <br>
+    <h3 style="color: darkBlue; font-weight: bold;"> Spark Refactor </h3>
+    <div class="row" style="padding-top: 60px;">
+        <div class="col-sm-6">
+            <script>
+                $('#Files').filestyle({
+                    buttonText: 'Multiple',
+                    buttonName: 'btn-primary'
+                });
+            </script>
+        </div>
+    </div>
+    <div style="margin-top:2px">
+        <form method="post" enctype="multipart/form-data" action="/Upload-spark/" onsubmit="return validateFileType()">
+            {% csrf_token %}
+            <!-- Dropdown for selecting file type -->
+            {% if status %}
+            <i>Files Uploaded Successfully</i>
+            {% else %}
+            <label for="fileType">Select File Type:</label>
+            <select id="fileType" name="fileType">
+                <option value="csv">CSV</option>
+                <option value="xml">XML</option>
+                <option value="json">JSON</option>
+                <option value="txt">TXT</option>
+                <option value="orc">ORC</option>
+                <option value="avro">AVRO</option>
+                <option value="parquet">PARQUET</option>
+                <option value="py">PY</option>
+
+            </select>
+            <br>
+            <br>
+
+            {{ form.as_p }}
+            <input class="btn btn-primary" type="submit" value="Upload" id="file_1" style="width: 100px" />
+            {% endif %}
+        </form>
+    </div>
+    <br>
+    <br>
+    <div class="col-sm-6">
+        <form method="post" action="/submit-spark/" onsubmit="handleProgress()">
+
+            {% if flag %}
+
+            <i>Files Submitted Successfully</i>
+            {% else %}
+            {% csrf_token %}
+            <input type="submit" value="Submit" class="btn btn-primary btn-lg" style="position: relative; right: 3%;" />
+            <input type="submit" value="Cancel" class="btn btn-primary btn-lg" style="position: relative; left: 20%;" onclick="location.href = '/cancel'" />
+            {% endif %}
+        </form>
+
+        <!-- GIF loader -->
+        <div id="loader" style="display: none;">
+            <img src="https://smartpay.pl/Content/loading2.gif" alt="Loading..." style="max-width: 50px; height: auto;">
+        </div>
+
+        <script>
+            // Function to handle progress
+            function handleProgress() {
+                const loader = document.getElementById("loader");
+                loader.style.display = "block"; // Display the loader
+            }
+
+            // Function to validate file type
+            function validateFileType() {
+                const selectedFileType = document.getElementById("fileType").value;
+                const selectedFileInput = document.querySelector('input[type="file"]');
+                const selectedFileName = selectedFileInput.value;
+
+                const allowedExtensions = {
+                    'csv': 'csv',
+                    'xml': 'xml',
+                    'json': 'json',
+                    'txt': 'txt',
+                    'orc': 'orc',
+                    'avro': 'avro',
+                    'parquet': 'parquet',
+                    'py': 'py',
+                };
+
+                const fileExtension = selectedFileName.split('.').pop().toLowerCase();
+
+                if (allowedExtensions[selectedFileType] !== fileExtension) {
+                    alert(`Please upload a ${allowedExtensions[selectedFileType]} file.`);
+                    return false;
+                }
+
+                return true;
+            }
+        </script>
+    </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+{% endblock %}

@@ -1,0 +1,24 @@
+Reqirements:
+------------
+Udemy Course for spark:
+https://capgemini.udemy.com/course/apache-spark-programming-in-python-for-beginners/learn/lecture/35799518#overview
+
+For Project:
+------------
+1. Install Pycharm Community Edition
+2. Install Python - version 3.11
+3. Install JDK - jdk8 or jdk11
+4. Install Django 3.2 in pycharm through 'pythonpackages' or using 'pip install Django == 3.2' command in terminal.
+
+
+
+For Spark:
+---------
+1. Follow the Udemy Video for Spark Installation Process.
+2. Install Spark - version 3.4.1
+3. Hadoop - version 3.2.2
+4. Install avro/parquet viewer plugin in pycharm to view .avro and .parquet files.
+
+
+
+

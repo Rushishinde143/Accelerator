@@ -15,14 +15,31 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from CDH2CDP import views
-from CDH2CDP.views import AboutView
 
+#from Accelerator.CDH2CDP import views
+# from .CDH2CDP import views
+from src import views
+
+# path('select_folder/', views.folder_selection),
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home_view),
-    path('page2/', views.page2_view),
-    path('Upload/', AboutView.upload_view),
-    path('submit/', AboutView.submit_view),
-    path('select_folder/', views.folder_selection)
+    path('spark/', views.spark_view),
+    path('hive/', views.hive_view),
+    path('zip/', views.zip_view),
+    path('Upload-hive/', views.upload_view_hive),
+    path('Upload-spark/', views.upload_view_spark),
+    #path('Upload-zip/', views.upload_view_zip),
+    path('submit-hive/', views.submit_view_hive),
+    path('submit-spark/', views.submit_view_spark),
+    path('submit-zip/', views.submit_zip),
+    path('reports/', views.view_generate_report),
+    path('submit_reports/', views.submit_generate_report),
+    path('cancel/', views.cancel_view),
+    path('contact_us/', views.help_button),
+    path('get_random_value/', views.submit_view_hive),
+    path('upload-zip/', views.upload_zip, name='upload_zip_file'),
+
+
+
 ]

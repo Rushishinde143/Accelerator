@@ -1,5 +1,5 @@
 """
-WSGI config for Accelerator project.
+WSGI paths for Accelerator project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 

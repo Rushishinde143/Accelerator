@@ -1,5 +1,5 @@
 """
-ASGI config for Accelerator project.
+ASGI paths for Accelerator project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 

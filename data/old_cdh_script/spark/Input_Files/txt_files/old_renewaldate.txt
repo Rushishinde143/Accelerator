@@ -1,0 +1,11 @@
+index	full_name	renewal_date	gender	ccnumber
+1	Craig Peterson	2070-06-16	Male	6.01105E+15
+2	Sally Hunt	2054-01-01	Male	6.30468E+15
+3	Dustin Gonzales	2104-07-03	Female	3.00076E+13
+4	Tommy Hart	2107-04-14	Male	4.90391E+15
+5	Barbara Santos	2042-02-20	Female	6.30497E+15
+6	Lula Wallace	2106-02-02	Male	6.01164E+15
+7	Kate Duncan	2071-09-16	Male	5.17794E+15
+8	Ophelia Newton	2054-09-02	Female	6.30437E+15
+9	Gordon Edwards	2058-06-29	Male	3.41916E+14
+10	Maud Hall	2114-12-05	Male	6.30447E+15

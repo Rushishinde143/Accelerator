@@ -1,0 +1,11 @@
+Index	First_Name	Last_Name	Age	City	Email	Gender	DOB
+1	Sophia	Hanson	28	Bivere	epza@ibapuwo.mh	Male	2026-02-26
+2	Etta	Perry	24	Seiscom	mularura@vagitni.bb	Female	2093-04-23
+3	Della	Howard	39	Meoburup	ce@he.zw	Female	2023-11-30
+4	Alejandro	Franklin	50	Saicoih	busgannum@viel.gn	Female	2041-02-09
+5	Cody	Ball	52	Bonefzi	usu@ovasem.kg	Female	2072-03-28
+6	Jordan	Gilbert	42	Puneulo	ko@ge.sc	Female	2076-05-30
+7	Cecilia	Davidson	32	Kapibdiv	ja@wu.mp	Male	2087-11-16
+8	Eula	Edwards	55	Dubsere	gumpaj@loodo.ml	Female	2028-02-06
+9	Frederick	Casey	64	Katosuliw	gapob@witi.bn	Male	2025-04-22
+10	Shawn	Steele	29	Wiidici	uzutah@rus.ky	Female	2042-11-29
