@@ -1,1 +1,1 @@
-print('This is the commit test')
+print('Changes made from git')
